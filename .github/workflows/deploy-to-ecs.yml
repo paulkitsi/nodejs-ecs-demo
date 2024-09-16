@@ -32,6 +32,8 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
+        env:
+          AWS_REGION: ${{ vars.AWS_REGION }}
 
       # Step 6: Build and tag the Docker image
       - name: Build, tag, and push Docker image to ECR
